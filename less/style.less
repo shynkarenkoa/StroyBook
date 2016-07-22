@@ -1,0 +1,293 @@
+@font-face 
+{
+    font-family: "Core Sans NR 55";
+    src: url("../fonts/CoreSansNR55M.ttf")
+}
+@font-face 
+{
+    font-family: "Core Sans NR 45";
+    src: url("../fonts/CoreSansNR45.ttf")
+}
+@font-face 
+{
+    font-family: "Core Pro";
+    src: url("../fonts/CodeProLC.ttf")
+}
+
+
+
+@gray: #54595c;
+@light-gray: #f5f5f5;
+@white: #ffffff;
+@mountain: #15b284;
+
+.blocks (@width; @height; @background)
+{
+	max-width: @width;
+	min-height: @height;
+	background: @background;
+}
+
+.texts (@font-family; @font-size; @color; @line-height)
+{
+	font-family: @font-family; 
+	font-size: @font-size; 
+	color: @color; 
+	line-height: @line-height;
+}
+
+h1, h2, button, p, input
+{
+	all:unset;
+}
+
+body
+{
+	max-width: 1920px;
+	min-width: 360px;
+	margin: 0 auto;
+}
+
+header
+{
+	.blocks(1920px; 60px; @gray);
+}
+
+main
+{
+	.blocks(1920px; auto; @light-gray);
+	padding: 40px 0;
+	
+	form
+	{
+		max-width: 1200px;
+		width: 100%;
+		background: @white;
+		margin: 0 auto;
+
+		.hr
+		{
+			border-bottom: 1px solid #eaeaea;
+		}
+
+		section
+		{
+			padding: 30px 0 30px 30px;
+		}
+
+		h2
+		{
+			.texts('Core Sans NR 55'; 17px; @mountain; 1.43);
+		}
+
+		.enter
+		{
+			max-width: 480px;
+			padding-top:20px;
+			.texts('Core Sans NR 45'; 17px; @gray; 1.2);
+			
+			display: flex;
+
+		}
+
+		.labelWrap
+		{
+			background: @light-gray;
+			text-align: center;
+
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+		}
+
+		label, input, button
+		{
+			padding: 0 20px;
+		}
+
+		input
+		{
+			width: 100%;
+		}
+
+		.labelWrap, input
+		{
+			border: 1px solid #eaeaea;
+			height: 40px;
+		}
+	}
+}
+
+button
+{
+	.blocks(245px; 40px; @white);
+	height: 40px;
+	border: 2px solid @mountain;
+	.texts('Core Pro'; 18px; #000000; 18px);
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.subm
+{
+	display: flex;
+
+	div
+	{
+		.texts('Core Sans NR 45'; 17px; @gray; 1.2);
+		padding-left: 30px;
+		min-width: 250px;
+
+		a
+		{
+			color: @mountain;
+		}
+	}
+}
+
+footer
+{
+	
+	.blocks(1920px; 360px; @mountain);
+	padding: 50px 0 40px 0;
+	background: @mountain url('../img/footer_city.png') bottom no-repeat;
+	
+	section
+	{
+		display: flex;
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.info div
+	{
+		padding-left: 40px;
+		border-left: 1px solid #54595c;
+	}
+
+	.info div, a, .copyright
+	{
+		.texts('Core Sans NR 45'; 15px; @white; 1.43);
+	}
+
+	ul, li
+	{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	a
+	{
+		text-decoration: none;
+	}
+
+	ul
+	{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	li
+	{
+		width: 100% / 4;
+		margin: 6px 0;
+	}
+}
+
+.info img
+{
+	object-fit: contain;
+	padding-right: 40px;
+}
+
+.copyright
+{		
+		p
+		{
+			border-right: 1px solid #54595c;
+		}
+
+		width: 200px;
+		padding-right: 20px;
+		display: flex;
+		
+		img
+		{
+			object-fit: contain;
+			margin-left: 15px;
+		}
+}
+
+.footerNav
+{
+	margin-top: 40px;
+}
+
+.social
+{
+	margin-top: 70px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.appStore img
+{
+	margin-right: 15px; 
+}
+
+.icons img
+{
+	margin-right: 20px; 
+}
+
+@media screen and (max-width: 1024px)
+{
+	footer li
+	{
+		width: 100% / 3;		
+	}
+
+	.social div
+	{
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	footer li
+	{
+		width: 100% / 2;		
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.subm
+	{
+		flex-wrap: wrap;
+		
+		div
+		{
+			margin-top: 30px;
+		}		
+	}
+
+	footer li
+	{
+		width: 100%;		
+	}
+
+	.info
+	{
+		flex-wrap: wrap;
+		p
+		{
+			margin-top: 50px;
+		}
+	}
+}

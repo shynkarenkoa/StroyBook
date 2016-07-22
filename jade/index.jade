@@ -1,0 +1,84 @@
+doctype html
+html(lang='ru')
+  head
+    title Stroybook
+    meta(charset="utf-8")
+
+    script(src='./script.js' defer)
+    link(rel='stylesheet', type='text/css', href='./css/style.css')
+
+    mixin footer-nav(...items)
+      article  
+        nav
+          ul
+            each item in items
+              li
+                a(href='#')= item
+  
+  body
+    header
+      div
+      div
+    main
+      form
+        section.tel
+          h2 Контактные данные
+          div.enter
+            div.labelWrap
+              label Номер телефона  
+            input#mobile(type='text', name='name', placeholder='Укажите номер телефона')
+        div.hr
+        section.pass
+          h2 Данные для входа в систему
+          div.enter
+            div.labelWrap
+              label E-mail адрес
+            input#email(type='email', name='name', placeholder='Введите E-mail') 
+          div.enter
+            div.labelWrap  
+              label Пароль
+            input#password(type='password', name='name', placeholder='Введите пароль') 
+          div.enter
+            div.labelWrap  
+              label Подтверждение пароля
+            input#passwordRepeat(type='password', name='name', placeholder='Введите пароль еще раз')
+        div.hr 
+        section.subm
+          button(type='submit') Зарегистрироваться
+          div
+            p Нажимая кнопку "Зарегистрироваться", Вы соглашаетесь с нашими 
+              a(href='#') Условиями использования сервиса
+              , а также с передачей и обработкой ваших данных, включая 
+              a(href='#') использования файлов "cookie"
+    footer
+      section.info
+        img(src='./img/Logo_footer.png', alt='Stroybook logo')
+        div
+          p Строительная интернет-тендер-энциклопедия Стройбук – первый на рынке проект, позволяющий как профессионалу, так и простому человеку ставить и решать любые задачи в области строительства и ремонта, проводить разнообразные строительные тендеры, находить любимую работу и многое другое – просто, не выходя из сайта!
+      section.footerNav
+        +footer-nav('О проекте','Платные услуги','Правила безопасности','Строительное законодательство','Обратная связь','Популярные запросы','Условия использования','Строительный справочник','Для прессы','Карта сайта','Помощь','Строительный калькулятор')
+      section.social
+        div.appStore
+          img(src='./img/Drioid.png', alt='AppStore')
+          img(src='./img/iOS.png', alt='iTunes')
+        div.icons
+          img(src='./img/VK.png', alt='VK')
+          img(src='./img/FB.png', alt='FaceBook')
+          img(src='./img/Twitter.png', alt='Twitter')
+          img(src='./img/Google+.png', alt='Google+')
+        div.copyright
+          p Cайт разработан и поддерживается компанией IntSite
+          img(src='./img/intSite.png', alt='intSite')
+
+
+
+
+     
+
+
+ 
+
+
+    
+    
+    
